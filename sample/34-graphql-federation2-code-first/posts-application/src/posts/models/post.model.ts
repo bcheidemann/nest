@@ -12,7 +12,4 @@ export class Post {
 
   @Field((type) => Int)
   authorId: number;
-
-  @Field((type) => User)
-  user?: User;
 }

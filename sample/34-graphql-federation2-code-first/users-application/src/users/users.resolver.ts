@@ -10,9 +10,4 @@ export class UsersResolver {
   getUser(@Args({ name: 'id', type: () => ID }) id: number): User {
     return this.usersService.findById(id);
   }
-
-  // @ResolveReference()
-  // resolveReference(reference: { __typename: string; id: number }): User {
-  //   return this.usersService.findById(reference.id);
-  // }
 }

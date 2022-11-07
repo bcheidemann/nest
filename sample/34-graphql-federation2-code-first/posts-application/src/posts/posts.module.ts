@@ -4,8 +4,8 @@ import {
 } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
+import { Post } from './models/post.model';
 import { User } from './models/user.model';
-import { PostsResolver } from './posts.resolver';
 import { PostsService } from './posts.service';
 import { UsersResolver } from './users.resolver';
 
@@ -17,13 +17,12 @@ import { UsersResolver } from './users.resolver';
       },
       driver: ApolloFederationDriver,
       buildSchemaOptions: {
-        // orphanedTypes: [User],
+        orphanedTypes: [User, Post],
       },
     }),
   ],
   providers: [
     PostsService,
-    // PostsResolver,
     UsersResolver
   ],
 })
