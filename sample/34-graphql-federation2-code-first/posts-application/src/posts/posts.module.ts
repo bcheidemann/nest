@@ -17,10 +17,14 @@ import { UsersResolver } from './users.resolver';
       },
       driver: ApolloFederationDriver,
       buildSchemaOptions: {
-        orphanedTypes: [User],
+        // orphanedTypes: [User],
       },
     }),
   ],
-  providers: [PostsService, PostsResolver, UsersResolver],
+  providers: [
+    PostsService,
+    // PostsResolver,
+    UsersResolver
+  ],
 })
 export class PostsModule {}

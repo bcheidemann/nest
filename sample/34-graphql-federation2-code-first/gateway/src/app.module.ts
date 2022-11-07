@@ -11,6 +11,7 @@ import { AppService } from './app.service';
       driver: ApolloGatewayDriver,
       gateway: {
         supergraphSdl: new IntrospectAndCompose({
+          pollIntervalInMs: 1000,
           subgraphs: [
             { name: 'users', url: 'http://localhost:3000/graphql' },
             { name: 'posts', url: 'http://localhost:3001/graphql' },

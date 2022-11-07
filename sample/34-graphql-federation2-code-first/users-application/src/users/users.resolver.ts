@@ -11,8 +11,8 @@ export class UsersResolver {
     return this.usersService.findById(id);
   }
 
-  @ResolveReference()
-  resolveReference(reference: { __typename: string; id: number }): User {
-    return this.usersService.findById(reference.id);
-  }
+  // @ResolveReference()
+  // resolveReference(reference: { __typename: string; id: number }): User {
+  //   return this.usersService.findById(reference.id);
+  // }
 }

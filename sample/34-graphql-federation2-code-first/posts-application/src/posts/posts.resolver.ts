@@ -15,18 +15,18 @@ import { ParseIntPipe } from '@nestjs/common';
 export class PostsResolver {
   constructor(private readonly postsService: PostsService) {}
 
-  @Query((returns) => Post)
-  post(@Args({ name: 'id', type: () => ID }, ParseIntPipe) id: number): Post {
-    return this.postsService.findOne(id);
-  }
+  // @Query((returns) => Post)
+  // post(@Args({ name: 'id', type: () => ID }, ParseIntPipe) id: number): Post {
+  //   return this.postsService.findOne(id);
+  // }
 
-  @Query((returns) => [Post])
-  posts(): Post[] {
-    return this.postsService.findAll();
-  }
+  // @Query((returns) => [Post])
+  // posts(): Post[] {
+  //   return this.postsService.findAll();
+  // }
 
-  @ResolveField((of) => User)
-  user(@Parent() post: Post): any {
-    return { __typename: 'User', id: post.authorId };
-  }
+  // @ResolveField((of) => User)
+  // user(@Parent() post: Post): any {
+  //   return { __typename: 'User', id: post.authorId };
+  // }
 }
