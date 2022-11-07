@@ -15,7 +15,7 @@ export class PostsService {
   }
 
   findOne(postId: number): Post {
-    return this.posts.find((post) => post.id === postId);
+    return this.posts.find((post) => post.id === Number(postId));
   }
 
   findAll(): Post[] {

@@ -11,4 +11,14 @@ export class UsersResolver {
   public posts(@Parent() user: User): Post[] {
     return this.postsService.findAllByAuthorId(user.id);
   }
+
+  @ResolveField((of) => Post)
+  public featuredPost(@Parent() user: User): Post {
+    return this.postsService.findOne(user.featuredPostId);
+  }
+
+  @ResolveField((of) => Post)
+  public favouritePost(@Parent() user: User): Post {
+    return this.postsService.findOne(user.featuredPostId);
+  }
 }
