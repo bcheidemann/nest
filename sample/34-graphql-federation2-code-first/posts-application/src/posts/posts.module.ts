@@ -17,7 +17,7 @@ import { UsersResolver } from './users.resolver';
       },
       driver: ApolloFederationDriver,
       buildSchemaOptions: {
-        orphanedTypes: [User, Post],
+        orphanedTypes: [User],
       },
     }),
   ],

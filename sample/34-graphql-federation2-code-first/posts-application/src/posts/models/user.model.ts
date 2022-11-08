@@ -15,4 +15,10 @@ export class User {
 
   @Field((type) => [Post])
   posts?: Post[];
+
+  @Field((type) => Post)
+  featuredPost?: Post[];
+
+  @Field((type) => Post)
+  favouritePost?: Post[];
 }
